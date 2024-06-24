@@ -3,12 +3,12 @@ Requirement:-
   Laravel
 
 1. Download project and open
-2. Root folder laravel-exam3 
+2. Root folder laravel9-crm
 3. .env file
   DB_CONNECTION=mysql
   DB_HOST=127.0.0.1
   DB_PORT=3306
-  DB_DATABASE=laravel_exam
+  DB_DATABASE=laravel9_crm
   DB_USERNAME=root
   DB_PASSWORD=
 
@@ -31,6 +31,8 @@ deafult url /admin/login
 
 System users
 1. Super admin -> Operation on admin
-2. Admin -> Operation on teachers and class
-3. Teacher -> Operation on exam and students
-4. Student -> Give exam and check exam given or not or pending
+2. Admin -> Operation on hr/interviewer/data admin
+3. Data Admin -> Collect data and assign to hr
+4. HR -> Hr will collect remaining data and assign to interviewer for each round
+5. Interviewer  -> Will check detail and take interview and give response
+
