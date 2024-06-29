@@ -16,7 +16,7 @@
         @endif
                 <div class="card">
                     <div class="card-header bg-primary">
-                        Admin Update Here
+                        Admin Update
                     </div>
                     <div class="card-body colorDesign">
                         @php
@@ -25,10 +25,10 @@
                         @foreach($admin as $data)
                         <form action="{{ route('super.update',['v'=>$v])}}" method="post">
                             @csrf
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="">ID</label>
                                 <input type="text" class="form-control" value="{{$data->id}}" name="id" readonly>
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label for="">Email</label>
                                 <input type="text" class="form-control" value="{{$data->email}}" name="email"
@@ -50,7 +50,7 @@
                                 @enderror
                             </div>
                             <input type="hidden" name="adminkey" value="{{$data->id}}">
-                            <button class="btn btn-success">Submit</button>
+                            <button class="btn btn-success">Upate</button>
                         </form>
                         @endforeach
                     </div>
@@ -77,7 +77,7 @@
         @endif
                 <div class="card">
                     <div class="card-header bg-primary">
-                        Top Admin Update Here
+                        Super Admin Profile
                     </div>
                     <div class="card-body colorDesign">
                         @php
@@ -85,10 +85,11 @@
                         @endphp
                         <form action="{{ route('super.update',['v'=>$v])}}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="">ID</label>
                                 <input type="text" class="form-control" value="{{Auth::guard('super')->user()->id}}" name="id" readonly>
-                            </div>
+                            </div> -->
+                            <input type="hidden" class="form-control" value="{{Auth::guard('super')->user()->id}}" name="id" readonly>
                             <div class="form-group">
                                 <label for="">Email</label>
                                 <input type="text" class="form-control" value="{{Auth::guard('super')->user()->email}}" name="email"
@@ -101,13 +102,13 @@
                                 <label for="" class="text-danger">{{$message}}</label>
                                 @enderror
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="">Password</label>
                                 <input type="text" class="form-control" value="{{Auth::guard('super')->user()->password}}" name="password" readonly>
                                 @error('password')
                                 <label for="" class="text-danger">{{$message}}</label>
                                 @enderror
-                            </div>
+                            </div> -->
                             <button class="btn btn-success mt-1">Submit</button>
                         </form>
                     </div>

@@ -9,7 +9,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Admin</h3>
+              <h3 class="card-title">Admin Trash</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">

@@ -10,7 +10,7 @@
 
             <div class="col-md-8 offset-md-2">
                 @if(session('status') && session('status')!= "")
-                <div class="alert alert-warning">
+                <div class="alert alert-success">
                     {{session('status')}}
                 </div>
                 @endif
@@ -26,15 +26,16 @@
                         @foreach($emp as $data)
                         <form action="{{ route('admin.update',['v'=>$v])}}" method="post">
                             @csrf
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="">ID</label>
                                 <input type="text" class="form-control" value="{{$data->id}}" name="id" readonly>
-                            </div>
+                            </div> -->
+                            <input type="hidden" class="form-control" value="{{$data->id}}" name="id" readonly>
                             <div class="form-group">
                                 <label for="">Email</label>
-                                <input type="text" class="form-control" value="{{$data->email}}" name="email"
-                                    readonly>
+                                <input type="text" class="form-control" value="{{$data->email}}" name="email" readonly>
                             </div>
+                            <!-- <input type="hidden" class="form-control" value="{{$data->email}}" name="email" readonly> -->
                             <div class="form-group">
                                 <label for="">Name</label>
                                 <input type="text" class="form-control" value="{{$data->name}}" name="name">
@@ -42,13 +43,13 @@
                                 <label for="" class="text-danger">{{$message}}</label>
                                 @enderror
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="">Password</label>
                                 <input type="text" class="form-control" value="{{$data->password}}" name="password" readonly>
                                 @error('password')
                                 <label for="" class="text-danger">{{$message}}</label>
                                 @enderror
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label for="">Gender</label>
                                 <input type="text" class="form-control" value="{{$data->gender}}" name="gender">
@@ -92,11 +93,13 @@
                         @endphp
                         <form action="{{ route('admin.update',['v'=>$v])}}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="">ID</label>
                                 <input type="text" class="form-control" value="{{Auth::guard('admin')->user()->id}}" name="id"
                                     readonly>
-                            </div>
+                            </div> -->
+                            <input type="hidden" class="form-control" value="{{Auth::guard('admin')->user()->id}}" name="id"
+                                    readonly>
                             <div class="form-group">
                                 <label for="">Email</label>
                                 <input type="text" class="form-control" value="{{Auth::guard('admin')->user()->email}}"
