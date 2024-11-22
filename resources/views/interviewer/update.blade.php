@@ -39,40 +39,19 @@
             <form action="{{ route('user.interviewer.profile')}}" method="POST" enctype="multipart/form-data">
             @csrf
                 <div class="row">
-                    <div class="col-md-6">
+                    <!-- <div class="col-md-6">
                         <div class="form-group">
                             <label for="">ID</label>
                             <input type="text" class="form-control" value="{{Auth::guard('emp')->user()->id}}" name="id" readonly>
                         </div>
-                    </div>
+                    </div> -->
+                    <input type="hidden" class="form-control" value="{{Auth::guard('emp')->user()->id}}" name="id" readonly>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Email</label>
                             <input type="text" class="form-control" value="{{Auth::guard('emp')->user()->email}}" name="email" readonly>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="">Name</label>
-                            <input type="text" class="form-control" value="{{Auth::guard('emp')->user()->name}}" name="name">
-                            @error('name')
-                                    <label for="" class="text-danger">{{$message}}</label>
-                        @enderror
-                        </div>
-                    </div>
-                    <div class="col-md-6">  
-                        <div class="form-group">
-                            <label for="">Password</label>
-                            <input type="text" class="form-control" value="{{Auth::guard('emp')->user()->password}}" name="password" readonly>
-                            @error('password')
-                                    <label for="" class="text-danger">{{$message}}</label>
-                            @enderror
-                        </div>
-                    </div>
-                 </div> 
-                 <div class="row">
                     <div class="col-md-6">     
                         <div class="form-group">
                             <label for="">Phone</label>
@@ -82,14 +61,27 @@
                             @enderror
                         </div>
                     </div>
+                </div>
+                <div class="row">
+                    
+                    <!-- <div class="col-md-6">  
+                        <div class="form-group">
+                            <label for="">Password</label>
+                            <input type="text" class="form-control" value="{{Auth::guard('emp')->user()->password}}" name="password" readonly>
+                            @error('password')
+                                    <label for="" class="text-danger">{{$message}}</label>
+                            @enderror
+                        </div>
+                    </div> -->
+                 </div> 
+                 <div class="row">
+                    
                     <div class="col-md-6">     
                         <div class="form-group">
                         <label for="">Upload DP</label>
                         <input type="file" class="form-control" name="dp">
                         </div>
                     </div>
-                </div>   
-                <div class="row">
                     <div class="col-md-6">     
                         <div class="form-group">
                             <label for="">Gender</label>
@@ -99,7 +91,10 @@
                             @enderror
                         </div>
                     </div>
-                </div>        
+                </div>   
+                <!-- <div class="row">
+                    
+                </div>         -->
                         
                         <input type="hidden" name="empid" id="" value="{{Auth::guard('emp')->user()->id}}">
                 <button class="btn btn-success mt-1">Submit</button>

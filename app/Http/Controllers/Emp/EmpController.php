@@ -119,7 +119,7 @@ class EmpController extends Controller
         }
         else
         {
-            return redirect()->back()->with('status','Dear Emp Super Admin Not Allow You');
+            return redirect()->back()->with('status','Dear Emp Admin Not Allow You');
         }    
     }
 

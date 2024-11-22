@@ -45,7 +45,7 @@
     <div class="row mt-5" style="opacity: 0.8">
         <div class="col-md-4 offset-md-4">
                @if(session('status') && session('status')!= "")
-               <div class="alert alert-danger">
+               <div class="alert alert-success">
                    {{session('status')}}
                </div>
                @endif

@@ -393,7 +393,7 @@ class HrController extends Controller
 
           
       $emp->name = $request->name;   
-      $emp->password = $request->password;
+      // $emp->password = $request->password;
       $emp->phone = $request->phone;  
       $emp->gender = $request->gender;  
       $emp->dp = session()->get('file'); 
